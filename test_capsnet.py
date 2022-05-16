@@ -20,7 +20,7 @@ Config class to determine the parameters for capsule net
 
 
 class Config:
-    def __init__(self, dataset='mnist'):
+    def __init__(self, dataset='cifar10'):
         if dataset == 'mnist':
             # CNN (cnn)
             self.cnn_in_channels = 1
