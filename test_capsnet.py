@@ -9,7 +9,7 @@ from data_loader import Dataset
 from tqdm import tqdm
 
 USE_CUDA = True if torch.cuda.is_available() else False
-BATCH_SIZE = 20
+BATCH_SIZE = 128
 N_EPOCHS = 100
 LEARNING_RATE = 0.01
 MOMENTUM = 0.9
@@ -141,7 +141,7 @@ if __name__ == '__main__':
         capsule_net = capsule_net.cuda()
     capsule_net = capsule_net.module
 
-    optimizer = torch.optim.Adam(capsule_net.parameters())
+    optimizer = torch.optim.Adam(capsule_net.parameters(), LEARNING_RATE, MOMENTUM)
 
     for e in range(1, N_EPOCHS + 1):
         train(capsule_net, optimizer, mnist.train_loader, e)
