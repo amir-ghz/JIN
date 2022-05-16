@@ -11,8 +11,8 @@ from tqdm import tqdm
 USE_CUDA = True if torch.cuda.is_available() else False
 BATCH_SIZE = 128
 N_EPOCHS = 50
-LEARNING_RATE = 0.01
-MOMENTUM = 0.9
+LEARNING_RATE = 0.001
+MOMENTUM = 0.96
 
 '''
 Config class to determine the parameters for capsule net
