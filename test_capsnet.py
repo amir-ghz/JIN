@@ -141,7 +141,7 @@ if __name__ == '__main__':
         capsule_net = capsule_net.cuda()
     capsule_net = capsule_net.module
 
-    optimizer = torch.optim.Adam(capsule_net.parameters(), LEARNING_RATE, MOMENTUM)
+    optimizer = torch.optim.Adam(capsule_net.parameters(), 1e-3, 0.9)
 
     for e in range(1, N_EPOCHS + 1):
         train(capsule_net, optimizer, mnist.train_loader, e)
